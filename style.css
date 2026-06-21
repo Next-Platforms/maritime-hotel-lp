@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap");
+
+/* Custom Optima Fonts */
+@font-face {
+  font-family: 'Optima';
+  src: url('./font/OPTIMA.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: url('./font/OPTIMA_B.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: url('./font/Optima Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: url('./font/Optima_Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Main font families */
+.shippori-mincho-regular {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 400 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-optima {
+  font-family: 'Optima', Optima, Candara, "Noto Sans", source-sans-pro, sans-serif !important;
+}
+
+.font-jp {
+  font-family: "Shippori Mincho", serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.text-glow-white {
+  text-shadow:
+    0 0 5px #ffffff,
+    0 0 6px #ffffff,
+    0 0 3px #ffffff,
+    0 0 1px #ffffff;
+}
+
+.figma-drop-shadow {
+  filter: drop-shadow(0px 0px 4px #020202);
+}
+
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Custom premium thin scrollbar if we want to show it */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
