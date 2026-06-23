@@ -175,3 +175,73 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* --------------------------------------------------------------------------
+   Scroll Reveal Animations
+   -------------------------------------------------------------------------- */
+
+.scroll-reveal,
+.load-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(4px);
+}
+
+.scroll-reveal-zoom {
+  opacity: 0;
+  transform: scale(0.94);
+  filter: blur(4px);
+}
+
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  filter: blur(4px);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  filter: blur(4px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal,
+  .load-reveal,
+  .scroll-reveal-zoom,
+  .scroll-reveal-left,
+  .scroll-reveal-right {
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+.scroll-reveal.revealed,
+.load-reveal.revealed,
+.scroll-reveal-zoom.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  filter: blur(0) !important;
+}
+
+.scroll-reveal-left.revealed,
+.scroll-reveal-right.revealed {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  filter: blur(0) !important;
+}
+
+/* Staggered entry delays for premium feel */
+.delay-50 { transition-delay: 50ms !important; }
+.delay-100 { transition-delay: 100ms !important; }
+.delay-150 { transition-delay: 150ms !important; }
+.delay-200 { transition-delay: 200ms !important; }
+.delay-250 { transition-delay: 250ms !important; }
+.delay-300 { transition-delay: 300ms !important; }
+.delay-350 { transition-delay: 350ms !important; }
+.delay-400 { transition-delay: 400ms !important; }
+.delay-500 { transition-delay: 500ms !important; }
+.delay-600 { transition-delay: 600ms !important; }
+.delay-700 { transition-delay: 700ms !important; }
+.delay-800 { transition-delay: 800ms !important; }
