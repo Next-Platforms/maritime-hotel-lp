@@ -49,7 +49,7 @@
 </head>
 
 <body
-  class="page-background w-screen min-h-screen bg-cover bg-no-repeat bg-fixed flex justify-center overflow-y-auto no-scrollbar py-[40px]">
+  class="page-background w-screen min-h-screen bg-cover bg-no-repeat bg-fixed flex justify-center overflow-y-auto no-scrollbar py-[40px] max-[480px]:py-0">
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHLVD2F6" height="0" width="0"
@@ -59,7 +59,12 @@
   <!-- ================================================================== -->
   <!-- Page shell: fixed 320px mobile column (Figma mobile frame)         -->
   <!-- ================================================================== -->
-  <main class="w-[320px] min-h-screen bg-[#FAF7F5] flex flex-col relative shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+  <main
+    class="w-[320px] max-[480px]:w-full min-h-screen bg-[#FAF7F5] flex flex-col relative shadow-[0_0_40px_rgba(0,0,0,0.3)] max-[480px]:shadow-none">
+    <!-- Scroll trigger for fixed bottom CTA button -->
+    <div id="top-scroll-trigger" class="absolute top-0 left-0 w-full h-[150px] pointer-events-none" aria-hidden="true">
+    </div>
+
     <!-- ================================================================ -->
     <!-- Hero                                                             -->
     <!-- ================================================================ -->
@@ -111,15 +116,18 @@
     <section class="px-4 pt-[34px] pb-[60px] text-center flex flex-col items-center bg-[#FAF7F5]" aria-label="ブランド紹介">
       <img src="./assets/images/brand-logo-white.svg" alt="ザ マリタイムホテル 横浜ベイ" class="scroll-reveal w-[159px]" />
 
-      <p class="scroll-reveal delay-50 shippori-mincho-regular text-[10px] text-[#691C24] tracking-[-0.1px] leading-[24px] mb-5">
+      <p
+        class="scroll-reveal delay-50 shippori-mincho-regular text-[10px] text-[#691C24] tracking-[-0.1px] leading-[24px] mb-5">
         ザ マリタイム ホテル横浜ベイ
       </p>
 
-      <p class="scroll-reveal delay-100 font-jp text-[12px] font-semibold text-[#691C24] tracking-[-0.1px] leading-[24px]">
+      <p
+        class="scroll-reveal delay-100 font-jp text-[12px] font-semibold text-[#691C24] tracking-[-0.1px] leading-[24px]">
         まだ誰も知らない美しい場所
       </p>
 
-      <h2 class="scroll-reveal delay-150 font-jp font-semibold text-[20px] text-[#691C24] leading-[28px] tracking-[-0.1px]">
+      <h2
+        class="scroll-reveal delay-150 font-jp font-semibold text-[20px] text-[#691C24] leading-[28px] tracking-[-0.1px]">
         ゲストに贈る、<br />「初めて」というおもてなし。
       </h2>
 
@@ -156,26 +164,22 @@
 
         <ul class="flex flex-col gap-3 list-none mx-auto pl-7 text-left">
           <li class="scroll-reveal-left delay-100 flex items-start gap-2">
-            <img src="./assets/images/concerns-icon-checkbox.png" alt="" class="shrink-0 w-[15px] h-[15px] mt-1"
-              aria-hidden="true" />
+            <img src="./assets/images/checkbox.svg" alt="" class="shrink-0 w-[15px] h-[15px] mt-1" aria-hidden="true" />
             <span
               class="shippori-mincho-regular font-jp text-[14px] leading-[24px] tracking-[-0.1px] text-white antialiased">友達と同じ結婚式場はなるべく避けたい</span>
           </li>
           <li class="scroll-reveal-left delay-150 flex items-start gap-2">
-            <img src="./assets/images/concerns-icon-checkbox.png" alt="" class="shrink-0 w-[15px] h-[15px] mt-1"
-              aria-hidden="true" />
+            <img src="./assets/images/checkbox.svg" alt="" class="shrink-0 w-[15px] h-[15px] mt-1" aria-hidden="true" />
             <span
               class="shippori-mincho-regular font-jp text-[14px] leading-[24px] tracking-[-0.1px] text-white antialiased">「よくある結婚式」にしたくない</span>
           </li>
           <li class="scroll-reveal-left delay-200 flex items-start gap-2">
-            <img src="./assets/images/concerns-icon-checkbox.png" alt="" class="shrink-0 w-[15px] h-[15px] mt-1"
-              aria-hidden="true" />
+            <img src="./assets/images/checkbox.svg" alt="" class="shrink-0 w-[15px] h-[15px] mt-1" aria-hidden="true" />
             <span
               class="shippori-mincho-regular font-jp text-[14px] leading-[24px] tracking-[-0.1px] text-white antialiased">周囲と比べられたくない</span>
           </li>
           <li class="scroll-reveal-left delay-250 flex items-start gap-2">
-            <img src="./assets/images/concerns-icon-checkbox.png" alt="" class="shrink-0 w-[15px] h-[15px] mt-1"
-              aria-hidden="true" />
+            <img src="./assets/images/checkbox.svg" alt="" class="shrink-0 w-[15px] h-[15px] mt-1" aria-hidden="true" />
             <span
               class="shippori-mincho-regular font-jp text-[14px] leading-[24px] tracking-[-0.1px] text-white antialiased">トレンド遅れだと思われたくない</span>
           </li>
@@ -320,12 +324,12 @@
         </p>
       </div>
 
-      <div class="mt-[30px] flex flex-col gap-[10px]">
-        <div class="scroll-reveal-zoom delay-100 pl-[20px] overflow-hidden">
+      <div class="mt-[30px] ml-auto flex flex-col gap-[10px]">
+        <div class="scroll-reveal-zoom delay-100 overflow-hidden">
           <img src="./assets/images/history-building-wide.webp" alt="歴史建造物の外観"
             class="w-[300px] h-[200px] object-contain" />
         </div>
-        <div class="flex pl-[20px] gap-[10px]">
+        <div class="flex gap-[10px]">
           <div class="scroll-reveal-left delay-150 w-[145px] h-[110px] bg-[#F3EFEA] overflow-hidden">
             <img src="./assets/images/history-detail-01.webp" alt="建造物の詳細 1" class="w-full h-full object-contain" />
           </div>
@@ -341,7 +345,7 @@
         </p>
       </div>
 
-      <div class="flex w-full h-[200px] gap-[10px] mt-[28px] mb-[30px] overflow-hidden">
+      <div class="max-[480px]:justify-center flex w-full h-[200px] gap-[10px] mt-[28px] mb-[30px] overflow-hidden">
         <div class="scroll-reveal-left delay-100 w-[180px] h-[200px] overflow-hidden bg-[#F3EFEA]">
           <img src="./assets/images/history-gallery-left.webp" alt="ホテル内装 1" class="w-full h-full object-cover" />
         </div>
@@ -369,7 +373,8 @@
     <!-- ================================================================ -->
     <section id="section-location" class="pt-[25px] pb-[30px] flex flex-col bg-white"
       aria-labelledby="location-heading">
-      <p class="scroll-reveal font-optima text-[16px] text-[#691C24] leading-[24px] tracking-[-0.01px] pr-[20px] mb-7 text-right">
+      <p
+        class="scroll-reveal font-optima text-[16px] text-[#691C24] leading-[24px] tracking-[-0.01px] pr-[20px] mb-7 text-right">
         02 location
       </p>
 
@@ -418,7 +423,7 @@
         </p>
       </div>
 
-      <div class="flex w-full h-[200px] gap-[10px] mt-[28px] mb-[30px] overflow-hidden">
+      <div class="max-[480px]:justify-center flex w-full h-[200px] gap-[10px] mt-[28px] mb-[30px] overflow-hidden">
         <div class="scroll-reveal-left delay-100 w-[130px] h-[200px] overflow-hidden bg-[#F3EFEA]">
           <img src="./assets/images/location-garden-left.webp" alt="ガーデン 1" class="w-full h-full object-cover" />
         </div>
@@ -465,12 +470,12 @@
         </p>
       </div>
 
-      <div class="mt-[30px] flex flex-col gap-[10px]">
-        <div class="scroll-reveal-zoom delay-100 pl-[20px] overflow-hidden">
+      <div class="mt-[30px] ml-auto flex flex-col gap-[10px]">
+        <div class="scroll-reveal-zoom delay-100 overflow-hidden">
           <img src="./assets/images/cuisine-course-wide.webp" alt="コース料理 1"
             class="w-[300px] h-[200px] object-contain" />
         </div>
-        <div class="flex pl-[20px] gap-[10px]">
+        <div class="flex gap-[10px]">
           <div class="scroll-reveal-left delay-150 w-[145px] h-[110px] bg-[#F3EFEA] overflow-hidden">
             <img src="./assets/images/cuisine-plate-01.webp" alt="コース料理 2" class="w-full h-full object-contain" />
           </div>
@@ -495,7 +500,7 @@
         </p>
       </div>
 
-      <div class="flex w-full h-[200px] gap-[10px] mt-[28px] mb-[30px] overflow-hidden">
+      <div class="max-[480px]:justify-center flex w-full h-[200px] gap-[10px] mt-[28px] mb-[30px] overflow-hidden">
         <div class="scroll-reveal-left delay-100 w-[180px] h-[200px] overflow-hidden bg-[#F3EFEA]">
           <img src="./assets/images/cuisine-gallery-left.webp" alt="デザート 1" class="w-full h-full object-cover" />
         </div>
@@ -617,6 +622,17 @@
   <div
     class="hidden lg:flex fixed left-[calc(50%+160px)] top-0 bottom-0 w-[calc(50%-160px)] items-center justify-center pointer-events-none z-10">
     <img src="./assets/images/bg-right-text.svg" alt="THE MARITIME HOTEL YOKOHAMA BAY" class="w-[305px] h-[54px]" />
+  </div>
+
+  <!-- Fixed bottom CTA button -->
+  <div id="fixed-cta-container" class="fixed-cta-container">
+    <a href="https://maritimehotel.fuwel.wedding/contact" class="cta-button cta-button--light-text">
+      <span class="cta-button__label font-jp">無料相談の予約</span>
+      <svg class="cta-button__icon" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"
+        aria-hidden="true">
+        <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </a>
   </div>
 
   <script src="./assets/js/script.js"></script>

@@ -66,15 +66,57 @@
     }, 50);
   }
 
+  /** Initialize fixed CTA button visibility on scroll */
+  function initFixedCTA() {
+    var topTrigger = document.getElementById("top-scroll-trigger");
+    var footer = document.querySelector("footer");
+    var fixedCta = document.getElementById("fixed-cta-container");
+    if (!topTrigger || !footer || !fixedCta) {
+      return;
+    }
+
+    var topIntersecting = true;
+    var bottomIntersecting = false;
+
+    function updateVisibility() {
+      if (topIntersecting || bottomIntersecting) {
+        fixedCta.classList.remove("visible");
+      } else {
+        fixedCta.classList.add("visible");
+      }
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.target === topTrigger) {
+            topIntersecting = entry.isIntersecting;
+          } else if (entry.target === footer) {
+            bottomIntersecting = entry.isIntersecting;
+          }
+        });
+        updateVisibility();
+      },
+      {
+        threshold: 0
+      }
+    );
+
+    observer.observe(topTrigger);
+    observer.observe(footer);
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       initSmoothScroll();
       initScrollReveal();
       initLoadReveal();
+      initFixedCTA();
     });
   } else {
     initSmoothScroll();
     initScrollReveal();
     initLoadReveal();
+    initFixedCTA();
   }
 })();
