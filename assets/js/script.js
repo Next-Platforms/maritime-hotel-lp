@@ -66,6 +66,17 @@
     }, 50);
   }
 
+  /** Keep fixed CTA aligned with the centered main column (not raw viewport). */
+  function syncFixedCtaPosition(fixedCta) {
+    var main = document.querySelector("main");
+    if (!main || !fixedCta) {
+      return;
+    }
+
+    var rect = main.getBoundingClientRect();
+    fixedCta.style.left = rect.left + rect.width / 2 + "px";
+  }
+
   /** Initialize fixed CTA button visibility on scroll */
   function initFixedCTA() {
     var topTrigger = document.getElementById("top-scroll-trigger");
@@ -73,6 +84,21 @@
     var fixedCta = document.getElementById("fixed-cta-container");
     if (!topTrigger || !footer || !fixedCta) {
       return;
+    }
+
+    function updateFixedCtaPosition() {
+      syncFixedCtaPosition(fixedCta);
+    }
+
+    updateFixedCtaPosition();
+    window.addEventListener("resize", updateFixedCtaPosition);
+    window.addEventListener("scroll", updateFixedCtaPosition, { passive: true });
+
+    if (typeof ResizeObserver !== "undefined") {
+      var main = document.querySelector("main");
+      if (main) {
+        new ResizeObserver(updateFixedCtaPosition).observe(main);
+      }
     }
 
     var topIntersecting = true;

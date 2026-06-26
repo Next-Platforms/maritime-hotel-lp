@@ -3,6 +3,10 @@
    Reusable utilities only. Section layout/typography lives in Tailwind (HTML).
    ========================================================================== */
 
+html {
+  overflow-x: clip;
+}
+
 /* --------------------------------------------------------------------------
    Fonts — Optima (self-hosted WOFF2) + Google Fonts in index.html
    -------------------------------------------------------------------------- */
@@ -254,6 +258,9 @@
   position: fixed;
   bottom: 24px;
   left: 50%;
+  display: flex;
+  justify-content: center;
+  width: 300px;
   transform: translate(-50%, 100px);
   opacity: 0;
   pointer-events: none;
